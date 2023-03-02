@@ -4,14 +4,16 @@ import {useClimate} from '../../context/ClimateContext'
 
 function Thermometer() {
 
-  const {temperature, setTemperature} = useClimate();
+  const {temperature, desiredTemp, setDesiredTemp} = useClimate();
+  
   return (
     <section>
       <h2>Thermometer</h2>
       <div className="actual-temp">Actual Temperature: {temperature}°F</div>
+      <div className="Desired-Temp">Desired Temperature: {desiredTemp}°F</div>
       <ReactSlider
-        value={temperature}
-        onAfterChange={(val) => {setTemperature(val)}}
+        value={desiredTemp}
+        onAfterChange={(val) => {setDesiredTemp(val)}}
         className="thermometer-slider"
         thumbClassName="thermometer-thumb"
         trackClassName="thermometer-track"
