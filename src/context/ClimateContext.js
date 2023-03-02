@@ -13,7 +13,9 @@ useEffect (()=>{
         if(desiredTemp>temperature)  return setTemperature(temperature=>++temperature);
         else if (desiredTemp<temperature)  return setTemperature(temperature=>--temperature);
     }, 1000)
-    return ()=>clearTimeout(tempTimeout)
+    console.log('desiredTemp',desiredTemp)
+    console.log('Temperature',temperature)
+    //return ()=>clearTimeout(tempTimeout)
 
 },[desiredTemp, temperature])
 return (
